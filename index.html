@@ -1,0 +1,37 @@
+﻿<h1>Ajouter un adhérent</h1>
+<form action="./insertAdh.php" method="post">
+	<fieldset>
+		Date d'adhésion :
+		<input type="date" name="adh_date_debut"/> <br><br>
+
+		Type d'adhésion :
+		<input type="radio" name="adh_type" value="Jazz" checked/> Jazz 
+		<input type="radio" name="adh_type" value="Jazz Gold"/> Jazz Gold <br><br>
+		
+		Nom :<br>
+		<input type="text" name="adh_nom"/><br><br>
+		
+		Prénom :<br>
+		<input type="text" name="adh_prenom"/><br><br>
+		
+		Téléphone :<br>
+		<input type="text" name="adh_telephone"/><br><br>
+		
+		Adresse mail :<br>
+		<input type="email" name="adh_mail"/><br><br>
+		
+		Commentaire :<br>
+		<input type="text" name="adh_commentaire"/><br><br>
+	</fieldset>
+	
+	<fieldset>
+		Date de la saisie de l'adhésion :<br>
+		<input type="date" name="adh_saisie_date"/><br><br>
+		
+		Auteur de la saisie de l'adhésion :<br>
+		<input type="text" name="adh_saisie_auteur"/><br><br>
+		
+	</fieldset>
+	
+	<input type="submit" name="submit" value="Valider"/>
+</form>

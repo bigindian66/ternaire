@@ -56,6 +56,7 @@ if(isset($_POST['submit'])) {
 	//Exemple : la dixième adhésion saisie le 22 janvier 2018 portera le numéro 180122_10
 	//La première adhésion du même jour portait le numéro 180122_01.
 		//$adh_num = $adh['num'] = $dateAdh.'_'. str_pad($lastIndex, 2, "0", STR_PAD_LEFT);
+
 		if($lastIndex<10){
 			$adh_num = $adh['num'] = $dateAdh.'_0'.$lastIndex;
 		}
@@ -63,27 +64,87 @@ if(isset($_POST['submit'])) {
 			$adh_num = $adh['num'] = $dateAdh.'_'.$lastIndex;
 		}
 
+		//echo ("Numéro d'adhérent : ".$adh['num'])."<br/><br/><br/>");
+
+
+	//vérifie que la valeur ne soit pas nulle ou vide
+		if(empty($_POST['adh_nom'])){
+			$errors["nom"] = "Le nom fait partie des informations obligatoires";
+		}
+		else{
+		//test_input applique trim, stripslashes et htmlspecialchars, cf. bas de page.
+			$adh_nom = $adh['nom'] = test_input($_POST['adh_nom']);
+		//Vérifie que le nom soit conforme aux attentes (cf. message d'erreur).
+			if (!preg_match(NAME_REGEX, $adh_nom)) {
+				$errors["nom"] = "Le nom doit être composé d'au moins 3 caractères.\n Sont valides les lettres accentuées ou non, en majuscules ou minuscules, les tirets et espaces.";
+			}
+		}
+		
+		if(empty($_POST['adh_prenom'])){
+			$errors["prenom"] = "Le prénom fait partie des informations obligatoires";
+		}
+		else{
+		//test_input applique trim, stripslashes et htmlspecialchars, cf. bas de page.
+			$adh_prenom = $adh['prenom'] = test_input($_POST['adh_prenom']);
+		//Vérifie que le nom soit conforme aux attentes (cf. message d'erreur).
+			if (!preg_match(NAME_REGEX, $adh_prenom)) {
+				$errors["prenom"] = "Le prénom doit être composé d'au moins 3 caractères.\n Sont valides les lettres accentuées ou non, en majuscules ou minuscules, les tirets et espaces.";
+			}
+		}
+		
+		if(empty($_POST['adh_telephone'])){
+			$adh_telephone="";
+			$warnings["telephone"]="Avertissement : Vous n'avez pas saisi de numéro de téléphone";
+		}
+		else{
+		//test_input applique trim, stripslashes et htmlspecialchars, cf. bas de page.
+			$adh_telephone = $adh['telephone'] = test_input($_POST['adh_telephone']);
+		//Vérifie que le nom soit conforme aux attentes (cf. message d'erreur).
+			if (!preg_match(TEL_REGEX, $adh_telephone)) {
+				$warnings["telephone"] = "Avertissement : Le numéro de téléphone doit être composé de 10 chiffres et commencer par \"0\".";
+			}
+		}
+		
+		if(empty($_POST['adh_mail'])){
+			$errors["mail"] = "Erreur : L'email fait partie des informations obligatoires";
+			$adh_mail="";
+		}
+		else{
+		//test_input applique trim, stripslashes et htmlspecialchars, cf. bas de page.
+			$adh_mail = $adh['mail'] = test_input($_POST['adh_mail']);
+		//Vérifie que le nom soit conforme aux attentes (cf. message d'erreur).
+			if (!preg_match(MAIL_REGEX, $adh_mail)){
+				$errors["mail"] = "Erreur : L'email ne semble pas valide, contactez un administrateur si vous êtes sûr qu'il n'y a pourtant pas d'erreur.";
+			}
+		}
 	
 	//Calcul de la date de fin d'adhésion en fonction de celle de début :
 		$dateFinAdh = $adh['date_fin'] = calculateEndDate($_POST['adh_date_debut']); //date('Y-m-d', mktime(0,0,0,$moisFin,1,$anneeFin));
-
-    //La valeur "date de saisie de l'adhésion" prend automatiquement la date du jour.
+		
 		$adh_saisie_date = $adh['saisie_date'] = date("Y-m-d");
-
 		/*if(empty($_POST['adh_saisie_date'])){
 			$adh_saisie_date=date("Y-m-d");
 		}
 		else{
 			$adh_saisie_date=$_POST['adh_saisie_date'];
 		}*/
-
-	//Le type d'adhésion est récupéré de la valeur du bouton radio sélectionné dans le formulaire.
+		
+		
+		if(empty($_POST['adh_saisie_auteur'])){
+			$adh_saisie_auteur="";
+		}
+		else{
+		//test_input applique trim, stripslashes et htmlspecialchars, cf. bas de page.
+			$adh_saisie_auteur = $adh['saisie_auteur'] = test_input($_POST['adh_saisie_auteur']);
+		//Vérifie que le nom soit conforme aux attentes (cf. message d'erreur).
+			if (!preg_match('/[a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ -]{3,25}/', $adh_saisie_auteur)) {
+				$warnings[] = "Le prénom doit être composé d'au moins 3 caractères.\n Sont valides les lettres accentuées ou non, en majuscules ou minuscules, les tirets et espaces.";
+			}
+		}
+		
 		$adh['type'] = $_POST['adh_type'];
 		
-	//TO DO : Créer tableau adh
-
-
-
+	//TO DO : Créer tableau adh 
 	//Après vérifications (TO DO), insertion dans la base des valeurs saisies dans le formulaire
 		/*$insertAdh = "INSERT INTO `t_adherent`(`adh_num`, `adh_nom`, `adh_prenom`, `adh_telephone`, `adh_mail`, `adh_date_debut`, `adh_date_fin`, `adh_saisie_date`, `adh_saisie_auteur`, `adh_type`, `adh_commentaire`) VALUES ('{$adh_num}','{$adh_nom}','{$adh_prenom}','{$adh_telephone}','{$adh_mail}','{$_POST['adh_date_debut']}','{$dateFinAdh}','{$adh_saisie_date}','{$adh_saisie_auteur}','{$_POST['adh_type']}', '')"; //.test_input($_POST['adh_commentaire'])});*/
 		
@@ -113,8 +174,7 @@ if(isset($_POST['submit'])) {
 		}
 
 		//et maintenant, fermez-la !
-		$sth = null;
-		$dbh = null;
+		$db = null;
 		
 	}
 
@@ -130,65 +190,6 @@ else{
 
 function validateInputs() {
 	//TODO : valider les $_POST
-    //vérifie que la valeur ne soit pas nulle ou vide
-    if(empty($_POST['adh_nom'])){
-        $errors["nom"] = "Le nom fait partie des informations obligatoires";
-    }
-    else{
-        //test_input applique trim, stripslashes et htmlspecialchars, cf. bas de page.
-        $adh_nom = $adh['nom'] = test_input($_POST['adh_nom']);
-        //Vérifie que le nom soit conforme aux attentes (cf. message d'erreur).
-        if (!preg_match(NAME_REGEX, $adh_nom)) {
-            $errors["nom"] = "Le nom doit être composé d'au moins 3 caractères.\n Sont valides les lettres accentuées ou non, en majuscules ou minuscules, les tirets et espaces.";
-        }
-    }
-
-    if(empty($_POST['adh_prenom'])){
-        $errors["prenom"] = "Le prénom fait partie des informations obligatoires";
-    }
-    else{
-        //test_input applique trim, stripslashes et htmlspecialchars, cf. bas de page.
-        $adh_prenom = $adh['prenom'] = test_input($_POST['adh_prenom']);
-        //Vérifie que le nom soit conforme aux attentes (cf. message d'erreur).
-        if (!preg_match(NAME_REGEX, $adh_prenom)) {
-            $errors["prenom"] = "Le prénom doit être composé d'au moins 3 caractères.\n Sont valides les lettres accentuées ou non, en majuscules ou minuscules, les tirets et espaces.";
-        }
-    }
-
-    if(empty($_POST['adh_telephone'])){
-        $warnings["telephone"]="Avertissement : Vous n'avez pas saisi de numéro de téléphone";
-    }
-    else{
-        //test_input applique trim, stripslashes et htmlspecialchars, cf. bas de page.
-        $adh_telephone = $adh['telephone'] = test_input($_POST['adh_telephone']);
-        //Vérifie que le nom soit conforme aux attentes (cf. message d'erreur).
-        if (!preg_match(TEL_REGEX, $adh_telephone)) {
-            $warnings["telephone"] = "Avertissement : Le numéro de téléphone doit être composé de 10 chiffres et commencer par \"0\".";
-        }
-    }
-
-    if(empty($_POST['adh_mail'])){
-        $errors["mail"] = "Erreur : L'email fait partie des informations obligatoires";
-    }
-    else{
-        //test_input applique trim, stripslashes et htmlspecialchars, cf. bas de page.
-        $adh_mail = $adh['mail'] = test_input($_POST['adh_mail']);
-        //Vérifie que le nom soit conforme aux attentes (cf. message d'erreur).
-        if (!preg_match(MAIL_REGEX, $adh_mail)){
-            $errors["mail"] = "Erreur : L'email ne semble pas valide, contactez un administrateur si vous êtes sûr qu'il n'y a pourtant pas d'erreur.";
-        }
-    }
-
-    if(empty($_POST['adh_saisie_auteur'])){
-    }
-    else{
-        //test_input applique trim, stripslashes et htmlspecialchars, cf. bas de page.
-        $adh_saisie_auteur = $adh['saisie_auteur'] = test_input($_POST['adh_saisie_auteur']);
-        //Vérifie que le nom soit conforme aux attentes (cf. message d'erreur).
-        if (!preg_match(NAME_REGEX, $adh_saisie_auteur)) {
-            $warnings[] = "Le prénom doit être composé d'au moins 3 caractères.\n Sont valides les lettres accentuées ou non, en majuscules ou minuscules, les tirets et espaces.";
-        }
-    }
 }
 
 function calculateEndDate($start_date) {
@@ -197,15 +198,13 @@ function calculateEndDate($start_date) {
 	return date('Y-m-d', mktime(0,0,0,$moisFin,1,$anneeFin));
 }
 
-
-  function prepareInsertQuery ($table, array $tofeed, $prefix = '') {
+function prepareInsertQuery ($table, array $tofeed, $prefix = '') {
 	//TODO : remplacer adh par le $prefix
 	$keys = "(`adh_".implode("`,`adh_", array_keys($tofeed))."`)";
 	$values = "('".implode("','", array_values($tofeed))."')";
 	
 	return "INSERT INTO `{$table}` {$keys} VALUES {$values} ";
 }
-
 
 function test_input($data){
 	$data = trim($data);

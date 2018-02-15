@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="878fc130-d0f1-42aa-9057-23876eac8054" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/ternaire.iml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change beforePath="$PROJECT_DIR$/insertAdh - Copie.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/insertAdh.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/test.php" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -72,21 +66,27 @@
               <caret line="66" column="9" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="178" selection-end-column="2" />
               <folding>
                 <element signature="n#validateInputs#0;n#!!top" expanded="false" />
-                <marker date="1518282848975" expanded="true" signature="5921:6002" ph="SELECT COUNT... t_adherent" />
-                <marker date="1518282848975" expanded="true" signature="7256:7294" ph="INSERT INTO `${{$table}}`... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dbCon.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dbCon.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/funcs/dbCon.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-              <folding>
-                <marker date="1518273505268" expanded="true" signature="644:668" ph="SELECT * FRO... t_adherent" />
-              </folding>
+            <state relative-caret-position="374">
+              <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="5" lean-forward="true" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -118,6 +118,7 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/funcs/insertAdh.php" />
         <option value="$PROJECT_DIR$/insertAdh_dev.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -148,8 +149,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -166,7 +167,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/insertAdh.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/insertAdh.php" />
   </component>
   <component name="RunDashboard">
@@ -199,17 +200,18 @@
       <workItem from="1518110449147" duration="958000" />
       <workItem from="1518272640278" duration="10117000" />
       <workItem from="1518283126367" duration="33000" />
+      <workItem from="1518698996126" duration="32000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15879000" />
+    <option name="totallyTimeSpent" value="15911000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="960" y="0" width="960" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20127119" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20594713" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -253,11 +255,35 @@
     <entry file="file://$PROJECT_DIR$/funcs/insertAdh.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1122">
+          <caret line="66" column="9" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="178" selection-end-column="2" />
+          <folding>
+            <element signature="n#validateInputs#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/funcs/dbCon.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="33" lean-forward="false" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/funcs/insertAdh.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
           <caret line="66" column="9" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="178" selection-end-column="2" />
           <folding>
             <element signature="n#validateInputs#0;n#!!top" expanded="false" />
-            <marker date="1518282848975" expanded="true" signature="5921:6002" ph="SELECT COUNT... t_adherent" />
-            <marker date="1518282848975" expanded="true" signature="7256:7294" ph="INSERT INTO `${{$table}}`... " />
           </folding>
         </state>
       </provider>
@@ -266,8 +292,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="25" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/funcs/insertAdh.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1518273505268" expanded="true" signature="644:668" ph="SELECT * FRO... t_adherent" />
+            <element signature="n#validateInputs#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -278,20 +312,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#validateInputs#0;n#!!top" expanded="false" />
-            <marker date="1518282848975" expanded="true" signature="5921:6002" ph="SELECT COUNT... t_adherent" />
-            <marker date="1518282848975" expanded="true" signature="7256:7294" ph="INSERT INTO `${{$table}}`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/funcs/insertAdh.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#validateInputs#0;n#!!top" expanded="false" />
-            <marker date="1518282848975" expanded="true" signature="5921:6002" ph="SELECT COUNT... t_adherent" />
-            <marker date="1518282848975" expanded="true" signature="7256:7294" ph="INSERT INTO `${{$table}}`... " />
           </folding>
         </state>
       </provider>
@@ -300,9 +320,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding>
-            <marker date="1518273505268" expanded="true" signature="644:668" ph="SELECT * FRO... t_adherent" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -312,8 +330,6 @@
           <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding>
             <element signature="n#validateInputs#0;n#!!top" expanded="false" />
-            <marker date="1518282848975" expanded="true" signature="5921:6002" ph="SELECT COUNT... t_adherent" />
-            <marker date="1518282848975" expanded="true" signature="7256:7294" ph="INSERT INTO `${{$table}}`... " />
           </folding>
         </state>
       </provider>
@@ -329,9 +345,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
-          <folding>
-            <marker date="1518273505268" expanded="true" signature="644:668" ph="SELECT * FRO... t_adherent" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -342,13 +356,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4b16a828-b03f-4fd3-b217-7a0e041e0d15/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4b16a828-b03f-4fd3-b217-7a0e041e0d15/console.sql" />
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -364,8 +372,6 @@
           <caret line="66" column="9" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="178" selection-end-column="2" />
           <folding>
             <element signature="n#validateInputs#0;n#!!top" expanded="false" />
-            <marker date="1518282848975" expanded="true" signature="5921:6002" ph="SELECT COUNT... t_adherent" />
-            <marker date="1518282848975" expanded="true" signature="7256:7294" ph="INSERT INTO `${{$table}}`... " />
           </folding>
         </state>
       </provider>
@@ -373,11 +379,17 @@
     <entry file="file://$PROJECT_DIR$/insertAdh_dev.php" />
     <entry file="file://$PROJECT_DIR$/funcs/dbCon.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-          <folding>
-            <marker date="1518273505268" expanded="true" signature="644:668" ph="SELECT * FRO... t_adherent" />
-          </folding>
+        <state relative-caret-position="374">
+          <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="5" lean-forward="true" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
